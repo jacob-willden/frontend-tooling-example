@@ -25,7 +25,7 @@
 When just getting started with a simple Web app, I would certainly use Parcel because it's quickest to set up and easiest to use in that circumstance. If I'm working on a larger, corporate-level Web project, it may make more sense to use Webpack to get all the features that may be needed. Esbuild seems generally most effective when combined into other tools like Vite, so I'd be unlikely to use it by itself due to the lack of features without plugins.
 
 ## [Sample Repo]()
-To deploy the project locally, run `npx parcel src/index.html`.
+To deploy the project locally, run `npx parcel src/index.html`. The assets used in the sample repo are for educational uses only.
 
 ## Sources:
 - [Parcel Website](https://parceljs.org/)
