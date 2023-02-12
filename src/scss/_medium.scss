@@ -1,0 +1,52 @@
+/*----------- BODY --------------*/
+
+
+
+/*----------- HEADER --------------*/
+
+
+
+/*----------- NAVIGATION --------------*/
+nav ul {margin-left: $gutter;}
+nav ul li {width: auto;}
+
+
+/*----------- MAIN --------------*/
+main {
+    #hero-image .picture-caption {
+        font-size: 2.25rem;
+        line-height: 3.375rem;
+    }
+    .home-sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .home-section {
+        padding: 0 1rem;
+    }
+    .staff-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .event-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .event {
+        width: 49%;
+        a {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/*----------- FOOTER --------------*/
+footer {
+    padding: 0.5rem $gutter 1rem $gutter;
+    display: flex;
+    justify-content: space-between;
+    .legal {
+        width: 30%;
+    }
+}

@@ -1,0 +1,340 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+/*----------- BODY --------------*/
+body {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+}
+
+div#header-wrapper, div#nav-wrapper, div#footer-wrapper {
+    background-color: $menuColor;
+}
+
+/*----------- HEADER --------------*/
+header {
+    padding: 1rem $gutter;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: white;
+    background-color: $menuColor;
+    h1 {margin: 0; max-width: 17rem;}
+    h2 {margin: 0; font-weight: normal;}
+    img {
+        margin-right: 0.75rem;
+    }
+}
+
+/*----------- NAVIGATION --------------*/
+nav {
+    background-color: $menuColor;
+    padding-left: $gutter;
+    width: 100%;
+    height: 2.75rem;
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    ul li.active a {
+        background-color: darken($menuColor, 50%);
+        color: white;
+    }
+    ul li a {
+        display: block;
+        background-color: $menuColor;
+        color: $menuTextColor;
+        padding: .5rem 1rem;
+        text-decoration: none;
+        font-size: .9rem;
+        text-align: center;
+    }
+    ul li:first-child a {border-left: none;}
+    ul li a:hover {
+        background-color: #eee;
+        color: black;
+    }
+}
+
+#menu-button {
+    font-family: 'Montserrat', sans-serif;
+    color: $menuTextColor;
+    border: none;
+    background: none;
+    padding: 0.9rem 0;
+}
+
+#menu-button span:nth-child(1) {display: block;}
+#menu-button span:nth-child(2) {display: none;}
+#menu-button.open span:nth-child(1) {display: none;}
+#menu-button.open span:nth-child(2) {display: block;}
+
+#main-menu {
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    position: relative;
+
+    li.parent > a::after {
+        content: "\25BC";
+        float: right;
+    }
+
+    li ul {
+        display: none;
+    }
+
+    li:hover ul {
+        display: block;
+    }
+}
+
+// Toggle Primary Menu from Hamburger Icon
+#main-menu.open {
+    height: auto;
+}
+@media only screen and (max-width: 60rem) {
+    #main-menu {
+        width: 15rem;
+    }
+}
+/*----------- MAIN --------------*/
+main {
+    padding: 0 $gutter;
+    min-height: 20rem;
+    h1, h2 {
+        margin-bottom: 0;
+    }
+    p {
+        padding-bottom: 0.5rem;
+    }
+
+    #hero-image {
+        max-width: 64rem;
+        position: relative;
+        .picture-caption {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 1.5rem;
+            line-height: 2.625rem;
+            width: 80%;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            opacity: 80%;
+        }
+    }
+
+    .home-sections {
+        margin-bottom: 2rem;
+    }
+
+    a {
+        color: black;
+    }
+
+    .home-section {
+        display: flex;
+        flex-direction: column;
+        a {
+            display: block;
+            margin-top: auto;
+            text-decoration: none;
+        }
+    }
+
+    .slider, .link-picture {
+        margin: 0 auto;
+        .picture-caption {
+            bottom: 0;
+            color: $menuTextColor;
+            background-color: $menuColor;
+            width: 100%;
+            padding: 0.5rem;
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .slider {
+        margin-top: 0.5rem;
+    }
+
+    .time-together {
+        margin-top: 0.5rem;
+        p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .staff-list {
+        margin-bottom: 1rem;
+    }
+
+    .employee-card {
+        display: flex;
+        align-items: center;
+        padding-bottom: 0.5rem;
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        img {
+            margin-top: 0.5rem;
+        }
+        p {
+            margin: 0 0 0 0.5rem;
+        }
+        .employee-name {
+            font-size: 1.125rem;
+        }
+    }
+
+    .event {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        padding: $gutter;
+        background-color: $secondaryColor;
+        a {
+            display: block;
+            margin-top: auto;
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    .event-top {
+        display: flex;
+        align-items: center;
+        h2 {
+            margin-top: 0;
+            margin-left: 1rem;
+        }
+        p {
+            padding-bottom: 0.25rem;
+        }
+    }
+
+    .gallery {
+        margin: 1rem 0;
+        img {
+            width: 100%;
+            height: auto;
+            padding-bottom: 1rem;
+        }
+    }
+
+    form {
+        background-color: $secondaryColor;
+        padding: 0.75rem 1.5rem;
+        margin: 0 0 2rem 0;
+        border-radius: 6px;
+        //max-width: 28rem;
+        fieldset {
+            border: none;
+        }
+        legend {
+            padding-top: 1rem;
+            margin-left: -1rem;
+            margin-bottom: -0.25rem;
+            font-size: 0.9rem;
+        }
+        .top, div {
+            display: block;
+            padding-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .top input, .top select, .top textarea {
+            -webkit-appearance: none;
+            display: block;
+            font-size: 1rem;
+            border: solid 2px #707070;
+            border-radius: 6px;
+            padding: 0.75rem;
+            color: $formLabel;
+            width: 100%;
+            max-width: 20rem;
+            background-color: white;
+        }
+        .horizontal {
+            display: block;
+            padding: 0.75rem;
+            color: black;
+        }
+        input[type="submit"] {
+            //cursor: pointer;
+            background-color: $menuColor;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            margin: 2rem 0 2rem 0;
+            border-radius: 6px;
+            width: 96%;
+            min-width: 13rem;
+            max-width: 20rem;
+        }
+        label.top :required {
+            border-left: red solid 8px;
+        }
+        label.top :required:valid {
+            border-left: green solid 8px;
+        }
+    }
+
+}
+
+
+/*----------- FOOTER --------------*/
+footer {
+    font-size: 0.875rem;
+    background-color: $menuColor;
+    color: $menuTextColor;
+    padding: 0.5rem $gutter 1rem $gutter;
+    margin: 0;
+    text-align: center;
+    a {
+        color: $menuTextColor;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    .copyright {
+        text-align: left;
+        margin-bottom: 1.5rem;
+    }
+    .legal {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        a {
+            display: block;
+            padding-top: 1rem;
+        }
+    }
+}
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

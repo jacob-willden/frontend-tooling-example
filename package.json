@@ -1,0 +1,15 @@
+{
+  "name": "frontend-tooling-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel"
+  },
+  "author": "Jacob Willden",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  },
+  "source": "src/index.html"
+}

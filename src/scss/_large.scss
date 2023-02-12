@@ -1,0 +1,90 @@
+header, nav, main, footer {
+    max-width: 64rem;
+    margin: auto;
+}
+
+/*----------- BODY --------------*/
+
+
+
+/*----------- HEADER --------------*/
+
+
+
+/*----------- NAVIGATION --------------*/
+nav {
+	// add space to the left to match the other left side elements DESIGN: Alignment
+    ul {
+        margin: 0 0 0 $gutter; 
+        padding: 0;
+    }
+	//Change to a horizontal menu bar
+	ul > li {
+        float: left; 
+        border-left: 1px solid rgba(0,0,0,0.2); 
+    }
+    
+	// add a single line so that all menu items have lines on both sides
+    ul li:last-child {border-right: 1px solid rgba(0,0,0,0.2);}
+    
+	//style the anchors
+	ul li a { 
+		display: block;
+		background: none;
+		font-size: .9em;
+		padding: .9em .9em;
+		text-decoration: none;
+		/*transition to transition over time on hover*/
+		-webkit-transition: 0.3s linear; 
+		transition: 0.3s linear;
+	}
+    
+	//rules for the sub menu items
+	ul li ul {
+		z-index:998;
+		position: absolute;
+		background-color: darken($menuColor, 3%);
+		left: -999em; /* pushes the menu way off to the side */
+		width: 12em; //width of the sub menu items when the drop down
+	}
+ 	ul li ul li { /* overides the float and line from the parent ul */
+        width: 100%;
+        border: none;
+		border-top: solid 1px rgba(0,0,0,0.2); /* vertical line seperating sub menu items*/
+	}
+
+	// this displays the menus as drop downs
+ 	ul li:hover ul { 
+		left: auto;
+		margin-left: 0;
+	}
+}
+
+#menu-button {
+    display: none;
+}
+#main-menu {
+	position: static;
+    height: auto;
+}
+
+
+/*----------- MAIN --------------*/
+main {
+    #hero-image .picture-caption {
+        font-size: 3.75rem;
+		line-height: 5.625rem;
+    }
+}
+
+form label.horizontal {
+    padding: 0.4rem 0;
+}
+
+
+/*----------- FOOTER --------------*/
+footer {
+	.legal {
+		width: 20%;
+	}
+}
